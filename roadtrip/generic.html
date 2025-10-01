@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<!--
+	Road Trip by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+--><html><head><title>频道 - In12 by PasM</title><meta charset="utf-8"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="assets/css/main.css"></head><body class="subpage">
+
+		<!-- Header -->
+			<header id="header" class="alt"><div class="logo"><a href="index.html">In12 <span>by PasM</span></a></div>
+				<a href="#menu"><span>Menu</span></a>
+			</header><!-- Nav --><nav id="menu"><ul class="links"><li><a href="index.html">首页</a></li>
+					<li><a href="generic.html">频道综合</a></li>
+					<li><a href="elements.html">帮助</a></li>
+				</ul></nav><!-- Content --><!--
+			Note: To show a background image, set the "data-bg" attribute below
+			to the full filename of your image. This is used in each section to set
+			the background image.
+		--><section id="post" class="wrapper bg-img" data-bg="banner2.jpg"><div class="inner">
+					<article class="box"><header><h2>新闻频道</h2>
+							<p>10.01.2025</p>
+						</header><div class="content">
+	                        <p>菲律宾强震后已发生795次余震
+来源：央视新闻 | 2025年10月01日 15:09:57
+菲律宾火山地震研究所称，自9月30日晚宿务省发生6.9级地震以来，截至当地时间10月1日上午9时，当地已发生795次余震，但只有4次有震感。
+
+菲律宾民防局官员在接受媒体采访时称，宿务省强震造成的死亡人数上升至69人。
+
+
+根据中国地震台网自动测定，菲律宾群岛地区9月30日发生6.9级地震，震源深度10公里，震中位于北纬11.20度，东经124.10度。
+
+据报道，本次地震震中位于宿务省博戈市，当地医院接收的伤者不断增加，已使医护力量面临巨大压力。地震发生后，宿务附近的莱特省、东萨马省、北萨马省等多地亦有明显震感。
+
+菲律宾地处环太平洋火山带，地震活动频繁。（总台记者 黄铮铮）</p>
+						</div>
+						<footer><ul class="actions"><li><a href="#" class="button alt icon fa-chevron-left"><span class="label">Previous</span></a></li>
+								<li><a href="#" class="button alt icon fa-chevron-right"><span class="label">Next</span></a></li>
+							</ul></footer></article></div>
+			</section><!-- Footer --><footer id="footer"><div class="inner">
+
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrolly.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/skel.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script>
+
+			<!-- 文章切换功能 -->
+			<script>
+				// 文章数据
+				const articles = [
+					{
+						title: "作业频道",
+						date: "00.00.2025",
+						content: "<p><p/>"
+					},
+					{
+						title: "新闻频道",
+						date: "10.01.2025",
+						content: "<p>菲律宾强震后已发生795次余震<br>来源：央视新闻 | 2025年10月01日 15:09:57<br>菲律宾火山地震研究所称，自9月30日晚宿务省发生6.9级地震以来，截至当地时间10月1日上午9时，当地已发生795次余震，但只有4次有震感。</p><p>菲律宾民防局官员在接受媒体采访时称，宿务省强震造成的死亡人数上升至69人。</p><p>根据中国地震台网自动测定，菲律宾群岛地区9月30日发生6.9级地震，震源深度10公里，震中位于北纬11.20度，东经124.10度。</p><p>据报道，本次地震震中位于宿务省博戈市，当地医院接收的伤者不断增加，已使医护力量面临巨大压力。地震发生后，宿务附近的莱特省、东萨马省、北萨马省等多地亦有明显震感。</p><p>菲律宾地处环太平洋火山带，地震活动频繁。（总台记者 黄铮铮）</p>"
+					},
+					{
+						title: "生活频道",
+						date: "00.00.2025",
+						content: "<p></p>"
+					},
+					{
+						title: "动漫频道",
+						date: "00.00.2025",
+						content: "<p></p>"
+					}
+				];
+
+				// 当前文章索引
+				let currentArticleIndex = 1;
+
+				// 页面加载完成后执行
+				document.addEventListener('DOMContentLoaded', function() {
+					// 获取页面元素
+					const articleTitle = document.querySelector('article header h2');
+					const articleDate = document.querySelector('article header p');
+					const articleContent = document.querySelector('article .content');
+					const prevButton = document.querySelector('.fa-chevron-left').parentElement;
+					const nextButton = document.querySelector('.fa-chevron-right').parentElement;
+
+					// 更新文章内容
+					function updateArticleContent() {
+						const article = articles[currentArticleIndex];
+						articleTitle.textContent = article.title;
+						articleDate.textContent = article.date;
+						articleContent.innerHTML = article.content;
+					}
+
+					// 上一篇按钮点击事件
+					prevButton.addEventListener('click', function(e) {
+						e.preventDefault();
+						currentArticleIndex = (currentArticleIndex - 1 + articles.length) % articles.length;
+						updateArticleContent();
+					});
+
+					// 下一篇按钮点击事件
+					nextButton.addEventListener('click', function(e) {
+						e.preventDefault();
+						currentArticleIndex = (currentArticleIndex + 1) % articles.length;
+						updateArticleContent();
+					});
+
+					// 初始化显示当前文章
+					updateArticleContent();
+				});
+			</script>
+		</div></footer></body></html>
